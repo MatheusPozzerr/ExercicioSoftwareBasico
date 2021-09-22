@@ -37,7 +37,10 @@ int main(void){
     //Richard Stallman, americano, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCC4hcZeo7OxD7WPYvxqtSjhhHl0LwzV2mw&usqp=CAU , 15-03-1953
     //Edsger Dijkstra, holandes, http://1.bp.blogspot.com/-ok6cWc2Z-ug/Tft1MKADMjI/AAAAAAAAAB4/C60Soe_4U44/w1200-h630-p-k-no-nu/edsger_dijkstra5.jpg ,11-05-1930
     //Charles Babbage, ingles,https://miro.medium.com/max/500/1*XWTVc_GoKWRR_cjnFhGVDQ.jpeg, 26-12-1871
-    
+    //John Von Neumann, hungaro, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmqd8X83fbp0htEkiDwQ-8l6iDkl6arFALw&usqp=CAU ,28-12-1903
+    //Bill Gates,americano , 28-10-1955  
+    //
+
     date date1= {23,06,1912};
     personalidades[0].dataNascimento.dia = 23; 
     personalidades[0].dataNascimento.mes = 06;
