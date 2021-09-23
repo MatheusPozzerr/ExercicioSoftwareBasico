@@ -20,7 +20,7 @@ struct compuPessoas
     char urlImagem[url_len+1];
     date dataNascimento;
 
-} personalidades[11];
+} personalidades[10];
 
 
 int numPersonalidades = 0 ;
@@ -34,6 +34,7 @@ bool retorna = false;
 
 int main(void){
     bool testing = false;
+    numPersonalidades = 10;
     //Alan Turing, ingles, https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/200px-Alan_Turing_Aged_16.jpg, 23-06-1912
     //Richard Stallman, americano, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCC4hcZeo7OxD7WPYvxqtSjhhHl0LwzV2mw&usqp=CAU , 15-03-1953
     //Edsger Dijkstra, holandes, http://1.bp.blogspot.com/-ok6cWc2Z-ug/Tft1MKADMjI/AAAAAAAAAB4/C60Soe_4U44/w1200-h630-p-k-no-nu/edsger_dijkstra5.jpg ,11-05-1930
@@ -41,7 +42,69 @@ int main(void){
     //John Von Neumann, hungaro, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmqd8X83fbp0htEkiDwQ-8l6iDkl6arFALw&usqp=CAU ,28-12-1903
     //Bill Gates,americano, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvi5iTp44HHluayPLRKcotcjb1mk05hNlBNg&usqp=CAU , 28-10-1955  
     // James Gosling, canadense,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOwfskjg0WXrD9ATiCHZo2V7ps8Q6wZrbawQ&usqp=CAU ,19-05-1955
+    // Timothy John Berners-Lee, ingles,https://www.techlise.com.br/blog/wp-content/uploads/2020/09/quem-e-tim-berners-lee.png, 12-03-1989
+    // Robert Cailliau, belga, https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_It3NNqiJb0rBG225h4IEQQWmF_n1NV-oYQ&usqp=CAU ,26-01-1947
+    // Vint Cerf, americano, https://i4ada.org/wp2019/wp-content/uploads/2019/10/vinc-cerf500.jpg, 23-06-1943
     strcpy(personalidades[0].nome, "Alan Turing");
+    strcpy(personalidades[0].nacionalidade, "ingles");
+    strcpy(personalidades[0].urlImagem, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/200px-Alan_Turing_Aged_16.jpg");
+    personalidades[0].dataNascimento.dia = 23;
+    personalidades[0].dataNascimento.mes = 06;
+    personalidades[0].dataNascimento.ano = 1912;
+    strcpy(personalidades[1].nome, "Richard Stallman");
+    strcpy(personalidades[1].nacionalidade, "americano");
+    strcpy(personalidades[1].urlImagem, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuCC4hcZeo7OxD7WPYvxqtSjhhHl0LwzV2mw&usqp=CAU");
+    personalidades[1].dataNascimento.dia = 15;
+    personalidades[1].dataNascimento.mes = 03;
+    personalidades[1].dataNascimento.ano = 1953;
+    strcpy(personalidades[2].nome, "Edsger Dijkstra");
+    strcpy(personalidades[2].nacionalidade, "holandes");
+    strcpy(personalidades[2].urlImagem, "http://1.bp.blogspot.com/-ok6cWc2Z-ug/Tft1MKADMjI/AAAAAAAAAB4/C60Soe_4U44/w1200-h630-p-k-no-nu/edsger_dijkstra5.jpg");
+    personalidades[2].dataNascimento.dia = 11;
+    personalidades[2].dataNascimento.mes = 05;
+    personalidades[2].dataNascimento.ano = 1930;
+    strcpy(personalidades[3].nome, "Charles Babbage");
+    strcpy(personalidades[3].nacionalidade, "ingles");
+    strcpy(personalidades[3].urlImagem, "https://miro.medium.com/max/500/1*XWTVc_GoKWRR_cjnFhGVDQ.jpeg");
+    personalidades[3].dataNascimento.dia = 26;
+    personalidades[3].dataNascimento.mes = 12;
+    personalidades[3].dataNascimento.ano = 1871;
+    strcpy(personalidades[4].nome, "John Von Neumann");
+    strcpy(personalidades[4].nacionalidade, "hungaro");
+    strcpy(personalidades[4].urlImagem, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKmqd8X83fbp0htEkiDwQ-8l6iDkl6arFALw&usqp=CAU");
+    personalidades[4].dataNascimento.dia = 28;
+    personalidades[4].dataNascimento.mes = 12;
+    personalidades[4].dataNascimento.ano = 1903;
+    strcpy(personalidades[5].nome, "Bill Gates");
+    strcpy(personalidades[5].nacionalidade, "americano");
+    strcpy(personalidades[5].urlImagem, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvi5iTp44HHluayPLRKcotcjb1mk05hNlBNg&usqp=CAU");
+    personalidades[5].dataNascimento.dia = 28;
+    personalidades[5].dataNascimento.mes = 10;
+    personalidades[5].dataNascimento.ano = 1955;
+    strcpy(personalidades[6].nome, "James Gosling");
+    strcpy(personalidades[6].nacionalidade, "canadense");
+    strcpy(personalidades[6].urlImagem, "https://www.techlise.com.br/blog/wp-content/uploads/2020/09/quem-e-tim-berners-lee.png");
+    personalidades[6].dataNascimento.dia = 19;
+    personalidades[6].dataNascimento.mes = 05;
+    personalidades[6].dataNascimento.ano = 1955;
+    strcpy(personalidades[7].nome, "Timothy John Berners-Lee");
+    strcpy(personalidades[7].nacionalidade, "ingles");
+    strcpy(personalidades[7].urlImagem, "https://www.techlise.com.br/blog/wp-content/uploads/2020/09/quem-e-tim-berners-lee.png");
+    personalidades[7].dataNascimento.dia = 12;
+    personalidades[7].dataNascimento.mes = 03;
+    personalidades[7].dataNascimento.ano = 1989;
+    strcpy(personalidades[8].nome, "Robert Cailliau");
+    strcpy(personalidades[8].nacionalidade, "belga");
+    strcpy(personalidades[8].urlImagem, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_It3NNqiJb0rBG225h4IEQQWmF_n1NV-oYQ&usqp=CAU");
+    personalidades[8].dataNascimento.dia = 26;
+    personalidades[8].dataNascimento.mes = 01;
+    personalidades[8].dataNascimento.ano = 1947;
+    strcpy(personalidades[9].nome, "Vint Cerf");
+    strcpy(personalidades[9].nacionalidade, "americano");
+    strcpy(personalidades[9].urlImagem, "https://i4ada.org/wp2019/wp-content/uploads/2019/10/vinc-cerf500.jpg");
+    personalidades[9].dataNascimento.dia = 23;
+    personalidades[9].dataNascimento.mes = 06;
+    personalidades[9].dataNascimento.ano = 1943;
     //date date1= {23,06,1912};
     // personalidades[0].dataNascimento.dia = 23; 
     // personalidades[0].dataNascimento.mes = 06;
@@ -56,15 +119,14 @@ int main(void){
         scanf("%c", &code);
     }
     printf("Menu: \n");
-    printf("Digite 0 para finalizar o programa.\nDigite 1 para inserir uma personalidade; \nDigite 2 para previsao do ano de nascimento da proxima personalidade;\nDigite 3 para mostrar na tela os dados das personalidades da computacao cadastradas;\n");
+    printf("Digite 0 para finalizar o programa.\nDigite 1 para previsao do ano de nascimento da proxima personalidade;\nDigite 2 para mostrar na tela os dados das personalidades da computacao cadastradas;\n");
+    //printf("Digite 0 para finalizar o programa.\nDigite 1 para inserir uma personalidade; \nDigite 2 para previsao do ano de nascimento da proxima personalidade;\nDigite 3 para mostrar na tela os dados das personalidades da computacao cadastradas;\n");
     scanf("%c", &code);
     retorna = false;
     switch (code) {
-    case '1': insert();
+    case '1': calcula();
     break;
-    case '2': calcula();
-    break;
-    case '3': print();
+    case '2': print();
     break;
     case '0': 
     printf("Finalizando programa...\n");
@@ -115,17 +177,17 @@ void order(void){
         return;
     }
     for( i=0; i<numPersonalidades; i++ ){
-        for( j=i+1; j<numPersonalidades; j++ ){
+        for( j=i; j<numPersonalidades; j++ ){
             if( personalidades[i].dataNascimento.ano > personalidades[j].dataNascimento.ano ){
-                 personalidades[11] = personalidades[i];
+                 personalidades[10] = personalidades[i];
                  personalidades[i] = personalidades[j];
-                 personalidades[j] = personalidades[11];
+                 personalidades[j] = personalidades[10];
             }
         }
      }
-    // for(i=0;i<=numPersonalidades-1;i++)
+    //for(i=0;i<=numPersonalidades-1;i++)
     // {
-    // printf("%d\n", personalidades[i].dataNascimento.ano);
+     //printf("%d\n", personalidades[i].dataNascimento.ano);
     // }
 }
 
