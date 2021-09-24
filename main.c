@@ -1,7 +1,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "readline.h"
 #define nome_len 40
 #define nacionalidade_len 40
 #define url_len 300
@@ -105,13 +104,6 @@ int main(void){
     personalidades[9].dataNascimento.dia = 23;
     personalidades[9].dataNascimento.mes = 06;
     personalidades[9].dataNascimento.ano = 1943;
-    //date date1= {23,06,1912};
-    // personalidades[0].dataNascimento.dia = 23; 
-    // personalidades[0].dataNascimento.mes = 06;
-    // personalidades[0].dataNascimento.ano = 1912;
-    // personalidades[1].dataNascimento.ano = 1920;
-    // personalidades[2].dataNascimento.ano = 1930;
-    // numPersonalidades = 3;
     char code;
     while (testing == false){
     if (retorna == true)
@@ -120,7 +112,6 @@ int main(void){
     }
     printf("Menu: \n");
     printf("Digite 0 para finalizar o programa.\nDigite 1 para previsao do ano de nascimento da proxima personalidade;\nDigite 2 para mostrar na tela os dados das personalidades da computacao cadastradas;\n");
-    //printf("Digite 0 para finalizar o programa.\nDigite 1 para inserir uma personalidade; \nDigite 2 para previsao do ano de nascimento da proxima personalidade;\nDigite 3 para mostrar na tela os dados das personalidades da computacao cadastradas;\n");
     scanf("%c", &code);
     retorna = false;
     switch (code) {
@@ -145,31 +136,6 @@ printf("\n");
     return 0;
 }
 
-void insert(void)
-{
-retorna = true;
-if (numPersonalidades == 10) {
-printf("Não é possível adicionar mais personalidades.\n");
-printf("-------------------------------------");
-return;
-}
-char code;
-printf("Nome da Personalidade: \n");
-scanf("%c", &code);
-fgets(personalidades[numPersonalidades].nome, nome_len, stdin);
-strtok(personalidades[numPersonalidades].nome, "\n");
-printf("Sua Nacionalidade: \n");
-scanf("%s", personalidades[numPersonalidades].nacionalidade);
-printf("Sua Data de nascimento, colocando desta forma: dd mm yyyy: \n");
-scanf("%d %d %d", &personalidades[numPersonalidades].dataNascimento.dia, &personalidades[numPersonalidades].dataNascimento.mes, &personalidades[numPersonalidades].dataNascimento.ano);
-printf("A url da imagem: \n");
-scanf("%s", personalidades[numPersonalidades].urlImagem);
-printf("Personalidade Cadastrada!\n");
-numPersonalidades++;
-printf("-------------------------------------");
-return;
-}
-
 void order(void){
     int i, j, aux;
     if (numPersonalidades == 0)
@@ -178,17 +144,13 @@ void order(void){
     }
     for( i=0; i<numPersonalidades; i++ ){
         for( j=i; j<numPersonalidades; j++ ){
-            if( personalidades[i].dataNascimento.ano > personalidades[j].dataNascimento.ano ){
+            if( personalidades[i].dataNascimento.ano < personalidades[j].dataNascimento.ano ){
                  personalidades[10] = personalidades[i];
                  personalidades[i] = personalidades[j];
                  personalidades[j] = personalidades[10];
             }
         }
      }
-    //for(i=0;i<=numPersonalidades-1;i++)
-    // {
-     //printf("%d\n", personalidades[i].dataNascimento.ano);
-    // }
 }
 
 void calcula(void){
@@ -202,14 +164,14 @@ void calcula(void){
     }
     
     int media,total, soma = 0;
-    for(int i=0;i<=numPersonalidades-1;i++)
+    for(int i=0;i<numPersonalidades-1;i++)
     {
-    soma = personalidades[i].dataNascimento.ano + soma;
+    soma += personalidades[i].dataNascimento.ano - personalidades[i+1].dataNascimento.ano;
     }
     media = soma/numPersonalidades;
-    total = media - personalidades[0].dataNascimento.ano;
+    total = personalidades[0].dataNascimento.ano + media;
 
-    printf("A proxima personalidade vai nascer no ano de: %d\n", personalidades[numPersonalidades-1].dataNascimento.ano + total);
+    printf("A proxima personalidade vai nascer no ano de: %d\n", total);
     printf("-------------------------------------\n");
 }
 
